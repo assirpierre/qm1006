@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Tela"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titulo" />
+
+    <TextView
+        android:id="@+id/txDescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp" />
+
+    <View style="@style/Divider" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txDescricaoEstab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strMsgEstabInicio" />
+
+            <TextView
+                android:id="@+id/txPrecoUnitario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="top|left"
+                android:maxLines="2"
+                android:text="Large Text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="bottom|left"
+                android:maxLines="1"
+                android:text="Large Text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/upButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/timepicker_up_normal" />
+
+            <EditText
+                android:id="@+id/numberEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/timepicker_input_selected"
+                android:editable="false"
+                android:focusable="false"
+                android:gravity="center"
+                android:inputType="number" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/downButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/timepicker_down_normal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/Divider" />
+    <TextView
+        android:id="@+id/txObs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:ems="10"
+        android:text="@string/strObs" />
+
+    <EditText
+        android:id="@+id/edObs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btAdicionais"
+            style="@style/ButtonB"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/strBtAdicionais" />
+        <Button
+            android:id="@+id/btPedido"
+            style="@style/ButtonB"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/strBtPedido" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_marginTop="5dip"
+        android:id="@+id/imgItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0px"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher" />
+
+</LinearLayout>

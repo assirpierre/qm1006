@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/fundo"
+    tools:context=".Main" >
+
+    <Button
+        android:id="@+id/btVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/strBtVoltar" />
+    
+    <TextView
+        android:id="@+id/txNomeEstab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26dp" />
+        
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strMsgEstabInicio"/>
+    
+    <Button
+        android:id="@+id/btCheckIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/strBtCheckIn" />
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\n" />    
+
+    <Button
+        android:id="@+id/btViagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/strBtViagem" />
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\n" />    
+    
+    <Button
+        android:id="@+id/btVerMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/strBtVeMenu" />
+
+</LinearLayout>

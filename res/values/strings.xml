@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">QMenu</string>
+    <string name="menu_settings">Configurações</string>
+	<string name="strHello">Bem vindo ao</string>
+	<string name="strMsgInicio">O primeiro cardápio digital gratuito</string>
+	<string name="strBtDelivery">Delivery</string>
+	<string name="strBtVoltar">Voltar</string>
+	<string name="strNoLocal">No local</string> 
+	<string name="strViagem">Para viagem</string> 
+	<string name="strBtLogin">Fazer login</string> 
+	<string name="strBtLocalizacao">Buscar pelo GPS</string>
+	<string name="strBtBuscaCidade">Buscar pela cidade ou nome</string>
+	<string name="strBtBuscaCEP">Buscar pelo CEP</string> 
+	<string name="strBtDigEndereco">Digitar endereço</string> 
+	<string name="strMsgDelivery">Selecione uma opção de localização do seu endereço</string> 
+	<string name="strMsgNoLocal">Selecione um estabelecimento</string> 
+	<string name="strSelEstab">Selecione um estabelecimento</string> 
+	<string name="strMsgBuscaCEP">Digite o seu CEP</string> 
+	<string name="strMsgLogin">Faça login para o acesso ao sistema</string> 
+	<string name="strLbLogin">Login ou email:</string> 
+	<string name="strLbSenha">Senha:</string> 
+	<string name="strBtEntrar">Entrar</string> 
+	<string name="strBtCadastro">Cadastre-se</string> 
+	<string name="strChGravarLogin">Lembrar usuário e senha</string> 
+	<string name="strSemConexao">Sem acesso ao servidor, verifique a conexão de internet do seu aparelho e tente novamente</string> 
+	<string name="strSemConexaoPergunta">Problema de conexão ao processar dados, deseja tentar novamente?</string> 
+	<string name="strUsuarioIncorreto">Usuário desconhecido ou senha incorreta</string> 
+	<string name="strAcessoNegadoChave">Acesso negado</string> 
+	<string name="strMainRodapeLogin">Entre com seu usuário no sistema, caso ainda não tenha, cadastre gratuitamente seu estabelecimento em: \n<a href="http://www.qmenu.com.br">qmenu.com.br</a></string> 
+	<string name="strBtLogout">Alterar usuário</string> 
+	<string name="strLbUsuarioLogado">Usuário conectado:</string> 
+	<string name="strErroConexaoWIFI">Erro ao conectar na rede WI-FI do estabelecimento</string>
+	<string name="strConexaoExistente">Você já está conectado a internet, escolha uma opção</string>
+	<string name="strBtAlertOK">OK</string>
+	<string name="strBtAlertCancela">Cancela</string>
+	<string name="strMsgConectando">Aguarde, conectando a rede...</string>
+	<string name="strMsgObtendoDados">Aguarde, processando dados...</string>
+	<string name="strMsgObtendoGPS">Aguarde, obtendo localização...</string>
+	<string name="strMsgTempoConexaoExcedido">Tempo de conexão excedido, selecione uma nova opção.</string>
+	<string name="strMsgMenuPrincipal">Selecione uma categoria no menu</string>
+	<string name="strMsgEstabInicio">Bem vindo, selecione uma das opções</string>
+	<string name="strMsgSelItem">Selecione o item que deseja pedir</string>
+	<string name="strMsgSelItemMultiplo">Selecione os itens e pressione OK</string>
+	<string name="strBtCheckIn">Check-in</string>
+	<string name="strBtViagem">Pedido para viagem</string>
+	<string name="strBtVeMenu">Ver menu</string>
+	<string name="strErroDados">Erro ao acessar dados, informe o administrador do sistema</string>
+	<string name="strErroGPS">Erro ao acessar GPS</string>
+	<string name="strGPSSemResposta">Não foi possível obter localização a partir do GPS</string>
+	<string name="strLdBuscaCidade">Buscar pelo nome da cidade</string>
+	<string name="strLdBuscaNome">Ou buscar pelo nome do estabelecimento</string>
+	<string name="strObs">Observação:</string>
+	<string name="strQtde">Qtde:</string>
+	<string name="strMoeda">R$</string>
+	<string name="strBtPedido">Gravar pedido</string>
+	<string name="strBtListaPedido">Pedidos</string>
+	<string name="strBtSelecionaItemC">OK</string>
+	<string name="strBtConfPedido">Confirmar</string>
+	<string name="strBtVerTodosPedidos">T Pedidos</string>
+	<string name="strBtFecharMesa">Fechar conta</string>
+	<string name="strTotalPedido">Total: R$</string>
+	<string name="strPrecoUnitarioPedido">\nPreço unitário: R$</string>
+	<string name="strConfirmDelPedido">Deseja realmente excluir o item?</string>
+	<string name="strConfirmPedido">Deseja realmente confirmar o pedido?</string>
+	<string name="strSemPedidos">Nenhum pedido foi encontrado</string>
+	<string name="strListamesa">Digite ou selecione a mesa:</string>
+	<string name="strListacomanda">Digite ou selecione a comanda:</string>
+	<string name="strNome">Nome:</string>
+	<string name="strSemDados">Sem dados</string>
+	<string name="strBtEstabelecimento">Estabelecimento</string>
+	<string name="strmesa">Mesa:</string>
+	<string name="strcomanda">Comanda:</string>
+	<string name="strSituacaoMesaD">Disponível</string>
+	<string name="strSituacaoMesaO">Ocupada</string>
+	<string name="strSelecionaMesa">Digite o nome do responsável e confirme seleção da ##?</string>
+	<string name="strSituacaoPedidoP">Pendente</string>
+	<string name="strSituacaoPedidoC">Confirmado</string>
+	<string name="strSituacaoPedidoA">Atendido</string>
+	<string name="strPedidoConfirmado">Pedido confirmado com sucesso</string>
+	<string name="strPedidoAlteracaoNegada">Alteração não permitida, pedido já cofirmado</string>
+	<string name="strStatusAlteradomesa">Solicitação não efetuada, mesa com situação ocupada</string>
+	<string name="strStatusAlteradocomanda">Solicitação não efetuada, comanda com situação ocupada</string>
+	<string name="strTodos">Tds</string>
+	<string name="strUltimos">Ultimo</string>
+	<string name="strBtRefresh">Recarregar</string>
+	<string name="strBtAdicionais">Adicionais</string>
+	<string name="strConfirmFechaMesa">Deseja realmente fechar a mesa?</string>
+	<string name="strQtdeItemSelIncorreto">Quantidade de itens selecionado ##S diferente do esperado ##E</string>
+	<string name="strInvalidamesa">Mesa inválida</string>
+	<string name="strInvalidacomanda">Comanda inválida</string>
+	<string name="strFechaMesaInvPedido">Fechamento não permitido, pedidos em aberto</string>
+	<string name="strFechaMesaInvSituacao">Fechamento não permitido, situação disponível</string>
+	<string name="strBtDemo">Estabelecimento Exemplo</string>
+	<string name="strBtCadastroEstab">Cadastrar Estabelecimento</string>
+	
+	<string-array name="conexaoEstab">
+		<item >Manter sua conexão e acessar o menu do estabelecimento</item>
+		<item >Se conectar a rede do estabelecimento</item>
+	</string-array> 
+
+</resources>

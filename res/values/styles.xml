@@ -1,0 +1,123 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+
+
+    <!-- Application theme. -->
+    <style name="TemaQMenu" parent="android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:dividerHeight">1dp</item>        
+	</style>
+    
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.7dp</item>
+        <item name="android:background">@drawable/my_divider</item>
+    </style>
+
+    <style name="DividerV">
+        <item name="android:layout_width">0.7dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/my_dividerv</item>
+    </style>
+
+    <style name="List">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:dividerHeight">0.7dp</item>
+        <item name="android:divider">@drawable/my_dividerlist</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:background">@drawable/buttom_selector</item>
+    </style>
+    
+    <style name="red_edittext" parent="@android:style/Widget.EditText">
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textColorHint">#FFFFFF</item>
+        <item name="android:textColorHighlight">#FFFFFF</item>
+    </style>
+
+    <style name="ButtonB">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:background">@drawable/buttom_selectorb</item>
+    </style>
+
+    <style name="TextoCabec">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>       
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="TextoNormal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>       
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="TextoNomeRestaurante">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>       
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Tela">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/gradiente_tela</item>
+    </style>
+
+</resources>

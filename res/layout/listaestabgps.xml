@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="10dp" >
+
+    <Button
+        android:id="@+id/btVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/strBtVoltar" />
+
+    <TextView
+        android:id="@+id/txSelEstab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/strSelEstab" />
+
+    <ListView
+        android:id="@+id/android:list"
+        style="@style/List"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>
