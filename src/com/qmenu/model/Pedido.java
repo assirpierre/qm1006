@@ -10,6 +10,10 @@ public class Pedido {
 	private String linha;
     private ArrayList<Item> l_item = new ArrayList<Item>();
     private ArrayList<Item> l_itemadd = new ArrayList<Item>();
+    private String item = "";
+    private String itemadd = "";
+    private String itemdescricao = "";
+    private String itemadddescricao = "";
     private MPrincipal mprincipal;
 	private String datapedido;
 	private String observacao;
@@ -20,7 +24,7 @@ public class Pedido {
 	private double precoadicionais = 0;
 	private double total;
 	private int posItemSelecionado;
-	
+
 	public String getDatapedido() {
 		return datapedido;
 	}
@@ -87,10 +91,14 @@ public class Pedido {
 	}
 
 	public void addItem(Item item){
+        this.item += (l_item.size() == 0?"":" - ") + item.getDescricao();
+        this.itemdescricao += (l_item.size() == 0?"":" - ") + item.getDescricaoestab();
 		l_item.add(item);
 	}
 	
 	public void addItemadd(Item item, boolean recalcula){
+        this.itemadd += (l_itemadd.size() == 0?"":" - ") + item.getDescricao();
+        this.itemadddescricao += (l_itemadd.size() == 0?"":" - ") + item.getDescricaoestab();
 		l_itemadd.add(item);
 		if(recalcula){
 			precoadicionais += item.getPreco();
@@ -158,6 +166,8 @@ public class Pedido {
 		this.precounitario = precounitario;
 	}
 	public void limpaItemadd(){
+        itemadd = "";
+        itemadddescricao = "";
 		l_itemadd.clear();
 		precoadicionais = 0;
 		calculaTotal();
@@ -187,4 +197,36 @@ public class Pedido {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
+
+    public String getItemadddescricao() {
+        return itemadddescricao;
+    }
+
+    public void setItemadddescricao(String itemadddescricao) {
+        this.itemadddescricao = itemadddescricao;
+    }
+
+    public String getItemdescricao() {
+        return itemdescricao;
+    }
+
+    public void setItemdescricao(String itemdescricao) {
+        this.itemdescricao = itemdescricao;
+    }
+
+    public String getItemadd() {
+        return itemadd;
+    }
+
+    public void setItemadd(String itemadd) {
+        this.itemadd = itemadd;
+    }
+
+    public String getItem() {
+        return item;
+    }
+
+    public void setItem(String item) {
+        this.item = item;
+    }
 }

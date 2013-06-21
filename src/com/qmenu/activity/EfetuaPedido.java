@@ -38,9 +38,9 @@ public class EfetuaPedido extends Activity
 		pedido = PedidoProvider.getPedidoAtual();
 		TextView txObs = (TextView) findViewById(R.id.txObs);
 		TextView txDescricao = (TextView) findViewById(R.id.txDescricao);
-		txDescricao.setText(pedido.getItemSelecionado().getDescricao());
+		txDescricao.setText(pedido.getItem());
 		TextView txDescricaoEstab = (TextView) findViewById(R.id.txDescricaoEstab);
-		txDescricaoEstab.setText(pedido.getItemSelecionado().getDescricaoestab());
+		txDescricaoEstab.setText(pedido.getItemdescricao());
 		TextView txPrecoUnitario = (TextView) findViewById(R.id.txPrecoUnitario);
 		txPrecoUnitario.setText(getString(R.string.strPrecoUnitarioPedido) + " " + pedido.getItemSelecionado().getPrecoF());
 		txTotal = (TextView) findViewById(R.id.txTotal);		
@@ -103,6 +103,7 @@ public class EfetuaPedido extends Activity
         	downButton.setEnabled(false);
         	upButton.setEnabled(false);
         	edObs.setEnabled(false);
+            btAdicionais.setEnabled(false);
         }
         imgView = (ImageView)findViewById(R.id.imgItem);
         ImageLoader.getInstance().load(imgView, "http://www.qmenu.com.br:8080/upload/qmenu/" + Util.leSessao(EfetuaPedido.this, "estab") + "/" + pedido.getItemSelecionado().getCodigo() + ".jpg", false);

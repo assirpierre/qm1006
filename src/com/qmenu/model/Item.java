@@ -9,7 +9,7 @@ public class Item {
 	private Integer grupoadicionais;
 	private double preco;
 	private boolean selecionado;
-	
+
     public String getDescricaoestab() {
 		return descricaoestab;
 	}

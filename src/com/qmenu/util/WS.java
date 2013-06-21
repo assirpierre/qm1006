@@ -1,6 +1,7 @@
 package com.qmenu.util;
 
 import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.PropertyInfo;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
@@ -28,9 +29,9 @@ public class WS extends AsyncTask<String, String, String> {
 //		NAMESPACE = "http://169.254.248.161:8080/";
 //		URL = "http://169.254.248.161:8080/qmw/ws/trocadados.jws";
 		NAMESPACE = "http://www.qmenu.com.br/";
-		URL = "http://www.qmenu.com.br:8080/qmenuws/ws/trocadados.jws";	
-//		NAMESPACE = "http://192.168.1.5:8080/";
-//		URL = "http://192.168.1.5:8080/qmw/ws/trocadados.jws";
+		URL = "http://www.qmenu.com.br:8080/qmenuws/ws/trocadados.jws";
+//		NAMESPACE = "http://192.168.0.5:8080/";
+//		URL = "http://192.168.0.5:8080/qmw/ws/trocadados.jws";
 //		NAMESPACE = "http://10.0.1.3:8080/";
 //		URL = "http://10.0.1.3:8080/qmw/ws/trocadados.jws";
 		this.ctx = ctx;		
@@ -86,7 +87,7 @@ public class WS extends AsyncTask<String, String, String> {
     }
 
 	public void addCampo(String campo, String valor){
-		request.addProperty(campo, valor);		
+		request.addProperty(campo, valor);
 	}
 
 	public String processa(boolean primeiraChamada, SoapObject request){
@@ -94,6 +95,7 @@ public class WS extends AsyncTask<String, String, String> {
 		try {
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
 	        envelope.setOutputSoapObject(request);
+            envelope.dotNet=true;
 	        HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
 	        androidHttpTransport.call(request.getName(), envelope);
 	        androidHttpTransport.reset();

@@ -2,7 +2,7 @@ package com.qmenu.model;
 
 import com.qmenu.util.Numero;
 
-public class Estab {
+public class Estabelecimento {
 	private String codigo;
 	private String nomeFantasia;
 	private String descricao;

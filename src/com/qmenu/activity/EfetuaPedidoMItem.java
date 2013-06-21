@@ -95,12 +95,13 @@ public class EfetuaPedidoMItem extends ListActivity
 					finish();
 				}
 			}
-        });
+             });
         if(!pedido.getSituacao().equals("P")){
         	btPedido.setEnabled(false);
         	downButton.setEnabled(false);
         	upButton.setEnabled(false);
         	edObs.setEnabled(false);
+            btAdicionais.setEnabled(false);
         }
 		this.m_adapter = new MenuItemAdapter(this, R.layout.rowitem, pedido.getL_item());
 		setListAdapter(this.m_adapter);

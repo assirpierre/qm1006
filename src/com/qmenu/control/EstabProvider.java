@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 
-import com.qmenu.model.Estab;
+import com.qmenu.model.Estabelecimento;
 import com.qmenu.util.DAO;
 
 public class EstabProvider {
 	
-	private static ArrayList<Estab> estab = new ArrayList<Estab>();
+	private static ArrayList<Estabelecimento> estab = new ArrayList<Estabelecimento>();
 	private static String codigo = "";
 	private static String nomefantasia = "";
 	private static String sistemaTrabalho = "";
@@ -20,9 +20,9 @@ public class EstabProvider {
 			codigo = rs.getString("id");
 			nomefantasia = rs.getString("nomefantasia");
 			sistemaTrabalho = rs.getString("sistema_trabalho");
-			estab = new ArrayList<Estab>();
+			estab = new ArrayList<Estabelecimento>();
 			do{
-				Estab o = new Estab();
+				Estabelecimento o = new Estabelecimento();
 				o.setCodigo(rs.getString("id"));
 				o.setNomeFantasia(rs.getString("nomeFantasia"));
 				o.setSistemaTrabalho(rs.getString("sistema_trabalho"));
@@ -31,11 +31,11 @@ public class EstabProvider {
 		}
 	}
 
-	public static ArrayList<Estab> getEstab() {
+	public static ArrayList<Estabelecimento> getEstab() {
 		return estab;
 	}
 
-	public static void setEstab(ArrayList<Estab> estab) {
+	public static void setEstab(ArrayList<Estabelecimento> estab) {
 		EstabProvider.estab = estab;
 	}
 

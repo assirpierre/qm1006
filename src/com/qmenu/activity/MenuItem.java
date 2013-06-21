@@ -72,7 +72,7 @@ public class MenuItem extends ListActivity
         super.onListItemClick(l, v, position, id);
         Pedido pedido = new Pedido();
         pedido.addItem((Item)this.getListAdapter().getItem(position));
-		abrePedido(pedido);            
+		abrePedido(pedido);
     }
 
 	private void abrePedido(Pedido pedido) {

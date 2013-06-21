@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.qmenu.R;
-import com.qmenu.model.Estab;
+import com.qmenu.model.Estabelecimento;
 import com.qmenu.util.AsyncTaskCompleteListener;
 import com.qmenu.util.DAO;
 import com.qmenu.util.Util;
@@ -38,7 +38,7 @@ public class ListaEstabGPS extends ListActivity implements AsyncTaskCompleteList
         		finish();	
         	}
         });
-		this.m_adapter = new MenuItemAdapter(this, R.layout.rowlistaestab, new ArrayList<Estab>());
+		this.m_adapter = new MenuItemAdapter(this, R.layout.rowlistaestab, new ArrayList<Estabelecimento>());
 		setListAdapter(this.m_adapter);
 		getWS(0).execute();
 	}
@@ -49,7 +49,7 @@ public class ListaEstabGPS extends ListActivity implements AsyncTaskCompleteList
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Estab estab = (Estab)this.getListAdapter().getItem(position);
+        Estabelecimento estab = (Estabelecimento)this.getListAdapter().getItem(position);
 		Util.gravaSessao(this, "estab", estab.getCodigo());
 		Util.gravaSessao(this, "nomeEstab", estab.getNomeFantasia());
 		startActivityForResult(new Intent(this, EstabInicio.class), 0);
@@ -63,9 +63,9 @@ public class ListaEstabGPS extends ListActivity implements AsyncTaskCompleteList
     	return ws;
 	}
 
-	private class MenuItemAdapter extends ArrayAdapter<Estab> {
-		private  ArrayList<Estab> estab;
-		public MenuItemAdapter(Context context, int textViewResourceId,  ArrayList<Estab> estab) {
+	private class MenuItemAdapter extends ArrayAdapter<Estabelecimento> {
+		private  ArrayList<Estabelecimento> estab;
+		public MenuItemAdapter(Context context, int textViewResourceId,  ArrayList<Estabelecimento> estab) {
 			super(context, textViewResourceId, estab);
 			this.estab = estab;
 		}
@@ -76,7 +76,7 @@ public class ListaEstabGPS extends ListActivity implements AsyncTaskCompleteList
 				v = vi.inflate(R.layout.rowlistaestab, null);
 			}
 			Util.formataRow(position, v);
-			Estab o = estab.get(position);
+			Estabelecimento o = estab.get(position);
 			if (o != null) {
 				TextView txNomeFantasia = (TextView) v.findViewById(R.id.nomefantasia);
 				TextView txDescricao = (TextView) v.findViewById(R.id.descricao);
@@ -98,7 +98,7 @@ public class ListaEstabGPS extends ListActivity implements AsyncTaskCompleteList
     		DAO rs = new DAO(retorno, this);
 			if(rs.next()){
 				do{
-					Estab estab = new Estab();
+					Estabelecimento estab = new Estabelecimento();
 					estab.setCodigo(rs.getString("codigo"));
 					estab.setNomeFantasia(rs.getString("nomeFantasia"));
 					estab.setDescricao(rs.getString("descricao"));

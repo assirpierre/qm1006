@@ -119,7 +119,7 @@ public class Main extends Activity
         	txUsuarioLogado.setVisibility(View.GONE);
         	Util.gravaSessao(this, "estab", "1");
         	Util.gravaSessao(this, "usuario", "demouser");
-        	Util.gravaSessao(this, "usuario_id", "2");
+        	Util.gravaSessao(this, "usuario_id", "350");
         }
     } 
     

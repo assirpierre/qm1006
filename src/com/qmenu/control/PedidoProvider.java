@@ -33,7 +33,7 @@ public class PedidoProvider {
 		DAO rs = new DAO(xml, a);
 		while(rs.next()){
 			Pedido o = new Pedido();
-			o.setCodigo(rs.getString("codigo"));
+			o.setCodigo(rs.getString("sequencia"));
 			o.setLinha(rs.getString("linha"));
 			o.setDatapedido(rs.getString("data_pedido"));
 			o.setObservacao(rs.getString("observacao"));
@@ -44,12 +44,10 @@ public class PedidoProvider {
 			o.setPrecoadicionais(rs.getDouble("preco_adicionais"));
 			o.setTotal(rs.getDouble("total"));
 			total += rs.getDouble("total");
-			for(int i = 1; i<11;i++)
-				if(!rs.getString("item"+i+"_id").equals(""))
-					o.addItem(ItemProvider.getItem(rs.getInt("item"+i+"_id")));
-			for(int i = 1; i<16;i++)
-				if(!rs.getString("itemadd"+i+"_id").equals(""))
-					o.addItemadd(ItemProvider.getItem(rs.getInt("itemadd"+i+"_id")), false);
+            o.setItem(rs.getString("item"));
+            o.setItemdescricao(rs.getString("item_descricao"));
+            o.setItemadd(rs.getString("item_adicional"));
+            o.setItemadddescricao(rs.getString("item_adicional_descricao"));
 			pedido.add(o);
 			if(o.getSituacao().equals("P"))
 				pedidoPendente.add(o);
@@ -97,14 +95,19 @@ public class PedidoProvider {
 					el.appendChild(getE(document, "precoadicionais", "" + p.getPrecoadicionais(), "t"));
 					el.appendChild(getE(document, "qtde", "" + p.getQtde(), "t"));
 					el.appendChild(getE(document, "total", p.getTotalF(), "t"));
-					for(int i = 0; i <p.getL_item().size();i++)
-						el.appendChild(getE(document, "item" + (i+1)+"_id", "" + p.getL_item().get(i).getCodigo(), "t"));
-					for(int i = p.getL_item().size(); i <10;i++)
-						el.appendChild(getE(document, "item" + (i+1)+"_id", "", "t"));
-					for(int i = 0; i <p.getL_itemadd().size();i++)
-						el.appendChild(getE(document, "itemadd" + (i+1)+"_id", "" + p.getL_itemadd().get(i).getCodigo(), "t"));
-					for(int i = p.getL_itemadd().size(); i <15;i++)
-						el.appendChild(getE(document, "itemadd" + (i+1)+"_id", "", "t"));
+                    String item = "", itemdescricao = "", itemadd = "", itemadddescricao = "";
+					for(int i = 0; i <p.getL_item().size();i++){
+                        item += p.getL_item().get(i).getCodigo() + (i==0?"":" - ");
+                        itemdescricao += p.getL_item().get(i).getDescricaoestab() + (i==0?"":" - ");
+                    }
+					for(int i = 0; i <p.getL_itemadd().size();i++){
+                        itemadd += p.getL_itemadd().get(i).getCodigo() + (i==0?"":" - ");
+                        itemadddescricao += p.getL_itemadd().get(i).getDescricaoestab() + (i==0?"":" - ");
+                    }
+                    el.appendChild(getE(document, "item", item, "t"));
+                    el.appendChild(getE(document, "itemdescricao", itemdescricao, "t"));
+                    el.appendChild(getE(document, "itemadd", itemadd, "t"));
+                    el.appendChild(getE(document, "itemadddescricao", itemadddescricao, "t"));
     				e.appendChild(el);
     			}
     			document.appendChild(e);
@@ -113,7 +116,7 @@ public class PedidoProvider {
 				Transformer trans = tf.newTransformer();   
 				trans.setOutputProperty("encoding", "ISO-8859-1");
 				trans.transform(new DOMSource(document), new StreamResult(os));   
-				xml = os.toString();  
+				xml = os.toString();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

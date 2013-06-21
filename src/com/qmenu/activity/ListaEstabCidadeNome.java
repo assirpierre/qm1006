@@ -22,7 +22,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.qmenu.R;
-import com.qmenu.model.Estab;
+import com.qmenu.model.Estabelecimento;
 import com.qmenu.util.AsyncTaskCompleteListener;
 import com.qmenu.util.DAO;
 import com.qmenu.util.Util;
@@ -47,7 +47,7 @@ public class ListaEstabCidadeNome extends ListActivity implements AsyncTaskCompl
         		finish();	
         	}
         });
-		this.m_adapter = new MenuItemAdapter(this, R.layout.rowlistaestab, new ArrayList<Estab>());
+		this.m_adapter = new MenuItemAdapter(this, R.layout.rowlistaestab, new ArrayList<Estabelecimento>());
 		setListAdapter(this.m_adapter);
 		
 		txSelEstab = (TextView) findViewById(R.id.txSelEstab);
@@ -110,7 +110,7 @@ public class ListaEstabCidadeNome extends ListActivity implements AsyncTaskCompl
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Estab estab = (Estab)this.getListAdapter().getItem(position);
+        Estabelecimento estab = (Estabelecimento)this.getListAdapter().getItem(position);
 		Util.gravaSessao(this, "estab", estab.getCodigo());
 		Util.gravaSessao(this, "nomeEstab", estab.getNomeFantasia());
 		startActivityForResult(new Intent(this, EstabInicio.class), 0);
@@ -125,9 +125,9 @@ public class ListaEstabCidadeNome extends ListActivity implements AsyncTaskCompl
     	return ws;
 	}
 
-	private class MenuItemAdapter extends ArrayAdapter<Estab> {
-		private  ArrayList<Estab> estab;
-		public MenuItemAdapter(Context context, int textViewResourceId,  ArrayList<Estab> estab) {
+	private class MenuItemAdapter extends ArrayAdapter<Estabelecimento> {
+		private  ArrayList<Estabelecimento> estab;
+		public MenuItemAdapter(Context context, int textViewResourceId,  ArrayList<Estabelecimento> estab) {
 			super(context, textViewResourceId, estab);
 			this.estab = estab;
 		}
@@ -138,7 +138,7 @@ public class ListaEstabCidadeNome extends ListActivity implements AsyncTaskCompl
 				v = vi.inflate(R.layout.rowlistaestab, null);
 			}
 			Util.formataRow(position, v);
-			Estab o = estab.get(position);
+			Estabelecimento o = estab.get(position);
 			if (o != null) {
 				TextView txNomeFantasia = (TextView) v.findViewById(R.id.nomefantasia);
 				TextView txDescricao = (TextView) v.findViewById(R.id.descricao);
@@ -158,7 +158,7 @@ public class ListaEstabCidadeNome extends ListActivity implements AsyncTaskCompl
 			if(rs.next()){
 				txSelEstab.setVisibility(View.VISIBLE);
 				do{
-					Estab estab = new Estab();
+					Estabelecimento estab = new Estabelecimento();
 					estab.setCodigo(rs.getString("codigo"));
 					estab.setNomeFantasia(rs.getString("nomeFantasia"));
 					estab.setDescricao(rs.getString("descricao"));
